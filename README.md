@@ -141,11 +141,11 @@ REMOVA o bloco de codigo
 ````
 FICARA VAZIOS
 #### 4º passo
-app/roBrowser/client/BGM
+1 - app/roBrowser/client/BGM
   - Os arquivos .mp3 do seu serve
-app/roBrowser/client/data
+2 - app/roBrowser/client/data
   - Adicione a sua pasta ````data```` em ````./data````. 
-app/roBrowser/client/resources
+3 - app/roBrowser/client/resources
   - E em ````resources```` a ````data.grf```` completa com a ````DATA.INI```` configurada.
 
 # Comandos uteis
