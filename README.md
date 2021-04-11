@@ -2,7 +2,7 @@
 
 ## Config Emulador
 
-#### 1 º - Baixe o emulador ou adicione o seu emulador na pasta [serve](https://github.com/FranciscoWallison/RagnaDockerCompose/tree/main/serve) 
+#### 1 º - Baixe o emulador ou adicione o seu emulador na pasta [serve](https://github.com/rathena) como rathena.
 EXP: 
 ````
   ./serve/rathena
