@@ -1,3 +1,1 @@
-!Dockerfile
-!.gitignore
-!/sql-file
+/dbdata
