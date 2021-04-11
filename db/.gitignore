@@ -1,3 +1,4 @@
 *
 !Dockerfile
 !.gitignore
+!/sql-file

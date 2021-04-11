@@ -75,4 +75,9 @@ subnet: 0.0.0.0:127.0.0.1:127.0.0.1
 Antes da linha 
 ````#endif /* CONFIG_CUSTOM_DEFINES_PRE_HPP */````
 adicione
-````#define PRERE````
+````
+#define PACKET_OBFUSCATION_KEY1 0x290551EA
+#define PACKET_OBFUSCATION_KEY2 0x2B952C75
+#define PACKET_OBFUSCATION_KEY3 0x2D67669B
+#define PRERE
+````
