@@ -58,13 +58,13 @@ Lembrar de remover ````//```` os comentário
 ## Arquivos map_athena.conf
 Mude as linhas
 ````
-//login_ip: 127.0.0.1
+//char_ip: 127.0.0.1
 //bind_ip: 127.0.0.1
 //map_ip: 127.0.0.1
 ````
 Para
 ````
-login_ip: serve
+char_ip: serve
 bind_ip: serve
 map_ip: serve
 ````
