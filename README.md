@@ -143,8 +143,10 @@ FICARA VAZIOS
 #### 4º passo
 1 - app/roBrowser/client/BGM
   - Os arquivos .mp3 do seu serve
+
 2 - app/roBrowser/client/data
-  - Adicione a sua pasta ````data```` em ````./data````. 
+  - Adicione a sua pasta ````data```` em ````./data````.
+ 
 3 - app/roBrowser/client/resources
   - E em ````resources```` a ````data.grf```` completa com a ````DATA.INI```` configurada.
 
