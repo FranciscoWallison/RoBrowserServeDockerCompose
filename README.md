@@ -107,19 +107,28 @@ Exemplo:  ````./configure --enable-packetver=20141022 && make clean && make serv
 ## Arquivos Client.php
 Mude as linhas
 ````if (file_exists($local_pathEncoded) && !is_dir($local_pathEncoded) && is_readable($local_pathEncoded)) {````
+
 Para
+
 ````if (file_exists($local_pathEncoded) && is_readable($local_pathEncoded)) {````
+
 ## Arquivos index.php
 #### 1º passo
 Mude as linhas
 ````if (empty($_SERVER['REDIRECT_STATUS']) || $_SERVER['REDIRECT_STATUS'] != 404 || empty($_SERVER['REQUEST_URI'])) {````
+
 Para
+
 ````if (empty($_SERVER['REDIRECT_STATUS']) || empty($_SERVER['REQUEST_URI'])) {````
+
 #### 2º passo
 Mude as linhas
 ````if (empty($_SERVER['REDIRECT_STATUS']) || $_SERVER['REDIRECT_STATUS'] != 404 || empty($_SERVER['REQUEST_URI'])) {````
+
 Para
+
 ````if (empty($_SERVER['REDIRECT_STATUS']) || empty($_SERVER['REQUEST_URI'])) {````
+
 #### 3º passo
 REMOVA o bloco de codigo
 ````
