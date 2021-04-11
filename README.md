@@ -79,25 +79,6 @@ Para
 bind_ip: serve
 ````
 Lembrar de remover ````//```` os comentário
-_____
-Criar conta utilizando ````_M/_F````
-Mude as linhas
-````
-new_account: no
-````
-Para
-````
-new_account: yes
-````
-## Arquivos subnet_athena.conf
-Mude as linhas
-````
-subnet: 255.0.0.0:127.0.0.1:127.0.0.1
-````
-Para
-````
-subnet: 0.0.0.0:127.0.0.1:127.0.0.1
-````
 ## Arquivos defines_pre.hpp
 Antes da linha 
 ````#endif /* CONFIG_CUSTOM_DEFINES_PRE_HPP */````
