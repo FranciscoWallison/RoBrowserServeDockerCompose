@@ -89,6 +89,11 @@ adicione
 #define PACKET_OBFUSCATION_KEY3 0x2D67669B
 #define PRERE
 ````
+
+Copile o seu emulador
+Exemplo:
+	- ./configure --enable-packetver=20141022 && make clean && make server
+	- 
 ## Config RoBrawser
 #### Mudar os arquivos
 ````
