@@ -92,7 +92,7 @@ adicione
 
 Copile o seu emulador
 Exemplo:
-	- ````./configure --enable-packetver=20141022 && make clean && make server````
+	- ````./configure --enable-packetver=20141022 && make clean && make server```` ou ````./entrypoint.sh````
 ## Config RoBrawser
 #### Mudar os arquivos
 ````
