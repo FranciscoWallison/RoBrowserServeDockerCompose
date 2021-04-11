@@ -1,0 +1,71 @@
+version: '3' # vs mais atual
+
+services: 
+
+  # Emulador
+  serve: 
+    build: serve
+    container_name: ragnarok-app
+    restart: always
+    tty: true
+    working_dir: /emulador
+    # SEMPRE QUE REINICIAR O CONTAINER IRAR BUIDAR O EMULADOR
+    # command: ./entrypoint.sh
+    volumes:
+      # LEMBRAR SUBISTITUIR O NOME <EMULADOR> PARA A PASTE DO SEU SERVER
+      - ./serve/rathena:/emulador
+      - ./serve/entrypoint.sh:/emulador/entrypoint.sh
+    ports:
+      - "5999:5999"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - REDIRECT_STATUS=true
+    networks:
+      - ragnarok-app-network
+    depends_on: 
+      - db
+      
+  db:
+    build: db
+    container_name: ragnarok-db
+    restart: always
+    tty: true
+    ports:
+      - "33006:3306"
+    volumes:
+      - ./db/dbdata:/var/lib/mysql
+      - ./db/prere:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_DATABASE=ragnarok
+      - MYSQL_ROOT_PASSWORD=R00t+
+      - MYSQL_USER=ragnarok
+      - MYSQL_PASSWORD=ragnarok
+    networks:
+      - ragnarok-app-network
+
+  # RoBrawser
+  app:
+    build: app
+    container_name: ro-browser-app
+    volumes:
+      - ./app:/var/www
+    networks:
+      - ragnarok-app-network
+
+  nginx:
+    build: nginx
+    container_name: ro-browser-nginx
+    restart: always
+    tty: true
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app/roBrowser:/var/www/roBrowser
+    networks:
+      - ragnarok-app-network
+    depends_on:
+      - app
+                    
+networks:
+  ragnarok-app-network:
+    driver: bridge
