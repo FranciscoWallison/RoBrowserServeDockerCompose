@@ -154,6 +154,7 @@ app/roBrowser/client/resources
   - E em ````resources```` a ````data.grf```` completa com a ````DATA.INI```` configurada.
 
 # Comandos uteis
+ - docker exec -i -t serve-ragnarok /bin/bash
  - ./entrypoint.sh 
  - ./configure --enable-packetver=20141022 && make clean && make server
  - wsproxy -a serve:6900,serve:6121,serve:5121
