@@ -90,7 +90,7 @@ adicione
 #define PRERE
 ````
 
-Copile o seu emulador
+Copile o seu emulador. Elembrar de acessar o conteiner do emulador ````docker exec -i -t serve-ragnarok /bin/bash````.
 Exemplo:
 	- ````./configure --enable-packetver=20141022 && make clean && make server```` ou ````./entrypoint.sh````
 ## Config RoBrawser
