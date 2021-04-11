@@ -5,7 +5,7 @@ services:
   # Emulador
   serve: 
     build: serve
-    container_name: ragnarok-app
+    container_name: serve-ragnarok
     restart: always
     tty: true
     working_dir: /emulador
@@ -27,14 +27,14 @@ services:
       
   db:
     build: db
-    container_name: ragnarok-db
+    container_name: db-ragnarok
     restart: always
     tty: true
     ports:
       - "33006:3306"
     volumes:
       - ./db/dbdata:/var/lib/mysql
-      - ./db/sql-file:/docker-entrypoint-initdb.d
+      - ./db/sql-files:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_DATABASE=ragnarok
       - MYSQL_ROOT_PASSWORD=R00t+

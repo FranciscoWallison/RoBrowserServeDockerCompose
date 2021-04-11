@@ -1,1 +1,3 @@
 /dbdata
+sql-files/*
+!sql-files/new_user_adm.sql

@@ -23,7 +23,7 @@ EXP-PASTA:
 ````
 EXP-docker-compose.yaml: 
 ````
-  - ./db/sql-file:/docker-entrypoint-initdb.d
+  - ./db/sql-files:/docker-entrypoint-initdb.d
 ````
 
 #### 4 º - Nas configurações de acesso como ````char_athena.conf````, ````login_athena.conf```` e ````map_athena.conf```` substitua ````127.0.0.1```` por ````server````.
