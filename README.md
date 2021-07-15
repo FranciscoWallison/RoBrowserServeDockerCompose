@@ -34,7 +34,6 @@ EXP-docker-compose.yaml:
     rathena/conf/map_athena.conf
     rathena/conf/login_athena.conf
     rathena/conf/subnet_athena.conf
-    e
     rathena/src/custom/defines_pre.hpp
 ````
 ## Arquivos inter_athena.conf
