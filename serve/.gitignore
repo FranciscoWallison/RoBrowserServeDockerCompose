@@ -3,3 +3,5 @@
 !.gitignore
 !entrypoint.sh
 !README.md
+!emulador/entrypoint.sh
+!emulador
