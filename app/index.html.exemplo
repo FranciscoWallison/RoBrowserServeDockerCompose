@@ -14,7 +14,7 @@
 					servers: [{
 						display:     "Demo Server",
 						desc:        "roBrowser's demo server",
-						address:     "192.168.112.4",
+						address:     "serve",
 						port:        6900,
 						version:     25,
 						langtype:    12,

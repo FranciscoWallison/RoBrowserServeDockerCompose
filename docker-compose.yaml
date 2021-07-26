@@ -9,12 +9,11 @@ services:
     restart: always
     tty: true
     working_dir: /emulador
-    # SEMPRE QUE REINICIAR O CONTAINER IRAR BUIDAR O EMULADOR
-    # command: ./entrypoint.sh
+    # SEMPRE QUE REINICIAR O CONTAINER IRAR BUIDAR O EMULADOR  
     volumes:
       # LEMBRAR SUBISTITUIR O NOME <EMULADOR> PARA A PASTE DO SEU SERVER
-      - ./serve/rathena:/emulador
-      - ./serve/entrypoint.sh:/emulador/entrypoint.sh
+      - ./serve/emulador:/emulador
+    # entrypoint: ./entrypoint.sh
     ports:
       - "5999:5999"
     environment:
