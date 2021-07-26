@@ -122,11 +122,21 @@ Para
 
 #### 2º passo
 Mude as linhas
-````if (empty($_SERVER['REDIRECT_STATUS']) || $_SERVER['REDIRECT_STATUS'] != 404 || empty($_SERVER['REQUEST_URI'])) {````
+````
+if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
+		Debug::write('Forbidden directory, you can just access files located in data and BGM folder.', 'error');
+		Debug::output();
+	}
+````
 
 Para
 
-````if (empty($_SERVER['REDIRECT_STATUS']) || empty($_SERVER['REQUEST_URI'])) {````
+````
+	// if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
+	// 	Debug::write('Forbidden directory, you can just access files located in data and BGM folder.', 'error');
+	// 	Debug::output();
+	// }
+````
 
 #### 3º passo
 REMOVA o bloco de codigo
