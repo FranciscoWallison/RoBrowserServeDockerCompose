@@ -121,23 +121,23 @@ Para
 ````if (empty($_SERVER['REDIRECT_STATUS']) || empty($_SERVER['REQUEST_URI'])) {````
 
 #### 2º passo
-Mude as linhas
-````if (empty($_SERVER['REDIRECT_STATUS']) || $_SERVER['REDIRECT_STATUS'] != 404 || empty($_SERVER['REQUEST_URI'])) {````
-
-Para
-
-````if (empty($_SERVER['REDIRECT_STATUS']) || empty($_SERVER['REQUEST_URI'])) {````
-
-#### 3º passo
-REMOVA o bloco de codigo
+Comentar a linha
 ````
-	// Check Allowed directory
-	if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
+if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
 		Debug::write('Forbidden directory, you can just access files located in data and BGM folder.', 'error');
 		Debug::output();
 	}
+````
+
+Para
 
 ````
+	// if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
+	// 	Debug::write('Forbidden directory, you can just access files located in data and BGM folder.', 'error');
+	// 	Debug::output();
+	// }
+````
+
 FICARA VAZIOS
 #### 4º passo
 1 - app/roBrowser/client/BGM
