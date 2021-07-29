@@ -156,7 +156,13 @@ FICARA VAZIOS
  - wsproxy -a serve:6900,serve:6121,serve:5121
  - docker-compose -f "docker-compose.yaml" up -d --build
 
+# Comandos uteis
+#### Start o docker-composer
+"docker-compose -f "docker-compose.yaml" up -d --build"
+#### Configurar o Emulador
+"./configure --enable-packetver=20141022 && make clean && make server"
+#### Start do emulador 
+"./athena-start start"
+#### Start no proxy 
+"wsproxy -a serve:6900,serve:6121,serve:5121"
 
-start o docker-composer - "docker-compose -f "docker-compose.yaml" up -d --build"
-start do emulador - "./athena-start start"
-start no proxy - "wsproxy -a serve:6900,serve:6121,serve:5121"
