@@ -156,7 +156,7 @@ FICARA VAZIOS
  - wsproxy -a serve:6900,serve:6121,serve:5121
  - docker-compose -f "docker-compose.yaml" up -d --build
 
-# Comandos uteis
+# Comandos Mais usados 
 #### Start o docker-composer
 "docker-compose -f "docker-compose.yaml" up -d --build"
 #### Configurar o Emulador
