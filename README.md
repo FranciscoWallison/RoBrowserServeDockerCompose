@@ -160,6 +160,10 @@ FICARA VAZIOS
 #### Start no proxy 
 "wsproxy -a serve:6900,serve:6121,serve:5121"
 
+Obs:
+````
+	Quando terminar de rodar os comandos é só abrir em http://localhost:8080/
+````
 
 # Comandos uteis
  - docker exec -i -t serve-ragnarok /bin/bash
