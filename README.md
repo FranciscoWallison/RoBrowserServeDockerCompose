@@ -162,7 +162,7 @@ FICARA VAZIOS
 
 Obs:
 ````
-	Quando terminar de rodar os comandos é só abrir em http://localhost:8080/
+	Quando terminar de rodar os comandos é só abrir o navegador http://localhost:8080/
 ````
 
 # Comandos uteis
