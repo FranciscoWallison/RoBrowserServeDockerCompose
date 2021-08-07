@@ -138,7 +138,6 @@ Para
 	// }
 ````
 
-FICARA VAZIOS
 #### 4º passo
 1 - app/roBrowser/client/BGM
   - Os arquivos .mp3 do seu serve
