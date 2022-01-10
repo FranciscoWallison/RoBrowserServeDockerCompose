@@ -88,6 +88,24 @@ adicione
 #define PACKET_OBFUSCATION_KEY3 0x2D67669B
 #define PRERE
 ````
+<details><summary><b>NEMO to diff ur client Packet Encryption</b></summary>
+<p>
+
+Use NEMO to diff ur client, and...
+
+Do NOT select:
+
+Disable Packet Encryption (Recommended)
+Select:
+
+Packet First Key Encryption, and following ur 1st key
+Packet Second Key Encryption, and following ur 2nd key
+Packet Third Key Encryption, and following ur 3rd key
+Then make sure put your custom keys on db/[import/]packet_db.txt, in packet_keys_use: <key1>,<key2>,<key3>
+
+
+</p>
+</details>
 
 #### Copile o seu emulador. 
 Elembrar de acessar o conteiner do emulador ````docker exec -i -t serve-ragnarok /bin/bash````.
