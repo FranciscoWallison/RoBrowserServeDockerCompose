@@ -103,6 +103,7 @@ Packet Second Key Encryption, and following ur 2nd key
 Packet Third Key Encryption, and following ur 3rd key
 Then make sure put your custom keys on db/[import/]packet_db.txt, in packet_keys_use: <key1>,<key2>,<key3>
 
+[packet-keys](https://www.robrowser.com/prototype/packet-keys/)
 
 </p>
 </details>
