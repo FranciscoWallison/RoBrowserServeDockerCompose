@@ -24,4 +24,4 @@ WORKDIR /emulador
 # RUN chmod a+x entrypoint.sh
 
 EXPOSE 5121 6121 6900 5999
-CMD ["bash"]
+CMD [ "/bin/bash"]

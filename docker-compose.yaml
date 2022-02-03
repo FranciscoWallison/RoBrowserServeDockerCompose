@@ -14,6 +14,8 @@ services:
       # LEMBRAR SUBISTITUIR O NOME <EMULADOR> PARA A PASTE DO SEU SERVER
       - ./serve/emulador:/emulador
     # entrypoint: ./entrypoint.sh
+    command: >
+      bash -c wsproxy -a serve:6900,serve:6121,serve:5121 &
     ports:
       - "5999:5999"
     environment:
