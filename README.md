@@ -88,6 +88,25 @@ adicione
 #define PACKET_OBFUSCATION_KEY3 0x2D67669B
 #define PRERE
 ````
+<details><summary><b>NEMO to diff ur client Packet Encryption</b></summary>
+<p>
+
+Use NEMO to diff ur client, and...
+
+Do NOT select:
+
+Disable Packet Encryption (Recommended)
+Select:
+
+Packet First Key Encryption, and following ur 1st key
+Packet Second Key Encryption, and following ur 2nd key
+Packet Third Key Encryption, and following ur 3rd key
+Then make sure put your custom keys on db/[import/]packet_db.txt, in packet_keys_use: <key1>,<key2>,<key3>
+
+[packet-keys](https://www.robrowser.com/prototype/packet-keys/)
+
+</p>
+</details>
 
 #### Copile o seu emulador. 
 Elembrar de acessar o conteiner do emulador ````docker exec -i -t serve-ragnarok /bin/bash````.
@@ -138,7 +157,6 @@ Para
 	// }
 ````
 
-FICARA VAZIOS
 #### 4º passo
 1 - app/roBrowser/client/BGM
   - Os arquivos .mp3 do seu serve
@@ -149,12 +167,27 @@ FICARA VAZIOS
 3 - app/roBrowser/client/resources
   - E em ````resources```` a ````data.grf```` completa com a ````DATA.INI```` configurada.
 
+
+# Comandos Mais usados 
+#### Start o docker-composer
+"docker-compose -f "docker-compose.yaml" up -d --build"
+#### Configurar o Emulador
+"./configure --enable-packetver=20141022 && make clean && make server"
+#### Start do emulador 
+"./athena-start start"
+#### Start no proxy 
+"wsproxy -a serve:6900,serve:6121,serve:5121"
+
+Obs:
+````
+	Quando terminar de rodar os comandos é só abrir o navegador http://localhost:8080/
+````
+
 # Comandos uteis
  - docker exec -i -t serve-ragnarok /bin/bash
  - ./entrypoint.sh 
  - ./configure --enable-packetver=20141022 && make clean && make server
  - wsproxy -a serve:6900,serve:6121,serve:5121
  - docker-compose -f "docker-compose.yaml" up -d --build
+ - wsproxy -a serve:6900,serve:6121,serve:5121 & ./athena-start start &
 
-
- wsproxy -a serve:6900,serve:6121,serve:5121 & ./athena-start start &
