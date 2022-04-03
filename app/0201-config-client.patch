@@ -1,0 +1,54 @@
+From ac8057ab7c9b4a9f25b4d5090866ab71dba371f0 Mon Sep 17 00:00:00 2001
+From: Francisco Wallison <franciscowallison@gmail.com>
+Date: Sat, 2 Apr 2022 12:02:30 -0300
+Subject: [PATCH 201/201] config client
+
+---
+ client/Client.php |  2 +-
+ client/index.php  | 10 +++++-----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/client/Client.php b/client/Client.php
+index c57fdd1..1f1dad7 100644
+--- a/client/Client.php
++++ b/client/Client.php
+@@ -102,7 +102,7 @@ final class Client
+ 		Debug::write('Searching file ' . $path . '...', 'title');
+ 
+ 		// Read data first
+-		if (file_exists($local_pathEncoded) && !is_dir($local_pathEncoded) && is_readable($local_pathEncoded)) {
++		if (file_exists($local_pathEncoded) && is_readable($local_pathEncoded)) {
+ 			Debug::write('File found at ' . $local_path, 'success');
+ 
+ 			// Store file
+diff --git a/client/index.php b/client/index.php
+index c618d2b..b60979d 100644
+--- a/client/index.php
++++ b/client/index.php
+@@ -48,7 +48,7 @@
+ 	/**
+ 	 * DIRECT ACCESS
+ 	 */
+-	if (empty($_SERVER['REDIRECT_STATUS']) || $_SERVER['REDIRECT_STATUS'] != 404 || empty($_SERVER['REQUEST_URI'])) {
++	if (empty($_SERVER['REDIRECT_STATUS']) || empty($_SERVER['REQUEST_URI'])) {
+ 		Debug::write('Direct access, no file requested ! You have to request a file (from the url), for example: <a href="data/clientinfo.xml">data/clientinfo.xml</a>', 'error');
+ 		Debug::output();
+ 	}
+@@ -60,10 +60,10 @@
+ 	$directory = basename(dirname(__FILE__));
+ 
+ 	// Check Allowed directory
+-	if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
+-		Debug::write('Forbidden directory, you can just access files located in data and BGM folder.', 'error');
+-		Debug::output();
+-	}
++	// if (!preg_match( '/\/('. $directory . '\/)?(data|BGM)\//', $path)) {
++	// 	Debug::write('Forbidden directory, you can just access files located in data and BGM folder.', 'error');
++	// 	Debug::output();
++	// }
+ 
+ 	// Get file
+ 	$path = preg_replace('/(.*('. $directory . '\/)?)(data|BGM\/.*)/', '$3', $path );
+-- 
+2.29.2.windows.3
+
