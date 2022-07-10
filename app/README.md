@@ -8,6 +8,8 @@
     app/roBrowser/client/data
     app/roBrowser/client/resources
 ````
+
+## As alterações dos arquivos ``client/Client.php`` e ``client/index.php`` pode ser usado o comando ``git apply`` em ``0201-config-client.patch``. 
 ## Arquivos Client.php
 Mude as linhas
 ````if (file_exists($local_pathEncoded) && !is_dir($local_pathEncoded) && is_readable($local_pathEncoded)) {````
