@@ -36,6 +36,7 @@ services:
     volumes:
       - ./db/dbdata:/var/lib/mysql
       - ./db/sql-files:/docker-entrypoint-initdb.d
+      - ./db/log:/var/log/mysql
     environment:
       - MYSQL_DATABASE=ragnarok
       - MYSQL_ROOT_PASSWORD=R00t+
