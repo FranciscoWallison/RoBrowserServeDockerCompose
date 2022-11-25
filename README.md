@@ -171,6 +171,8 @@ Para
 # Comandos Mais usados 
 #### Start o docker-composer
 "docker-compose -f "docker-compose.yaml" up -d --build"
+#### Stop o docker-composer
+"docker compose -f "docker-compose.yaml" down ""
 #### Configurar o Emulador
 "./configure --enable-packetver=20141022 && make clean && make server"
 #### Start do emulador 
