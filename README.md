@@ -170,11 +170,11 @@ Para
 
 # Comandos Mais usados 
 #### Start o docker-composer
-"docker-compose -f "docker-compose.yaml" up -d --build"
+docker-compose -f "docker-compose.yaml" up -d --build
 #### Stop o docker-composer
-"docker compose -f "docker-compose.yaml" down ""
+docker compose -f "docker-compose.yaml" down
 #### Configurar o Emulador
-"./configure --enable-packetver=20141022 && make clean && make server"
+"./configure && make clean && make server"
 #### Start do emulador 
 "./athena-start start"
 #### Start no proxy 
@@ -188,7 +188,7 @@ Obs:
 # Comandos uteis
  - docker exec -i -t serve-ragnarok /bin/bash
  - ./entrypoint.sh 
- - ./configure --enable-packetver=20141022 && make clean && make server
+ - ./configure && make clean && make server
  - wsproxy -a serve:6900,serve:6121,serve:5121
  - docker-compose -f "docker-compose.yaml" up -d --build
  - wsproxy -a serve:6900,serve:6121,serve:5121 & ./athena-start start &
