@@ -174,7 +174,7 @@ docker-compose -f "docker-compose.yaml" up -d --build
 #### Stop o docker-composer
 docker compose -f "docker-compose.yaml" down
 #### Configurar o Emulador
-"./configure && make clean && make server"
+"./configure && make clean && make server" ou "./configure && make clean && make sql"
 #### Start do emulador 
 "./athena-start start"
 #### Start no proxy 
