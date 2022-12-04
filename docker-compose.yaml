@@ -5,7 +5,7 @@ services:
   # Emulador
   serve: 
     build: serve
-    container_name: serve-ragnarok
+    container_name: ro-ragnarok-serve
     restart: always
     tty: true
     working_dir: /emulador
@@ -14,10 +14,13 @@ services:
       # LEMBRAR SUBISTITUIR O NOME <EMULADOR> PARA A PASTE DO SEU SERVER
       - ./serve/emulador:/emulador
     # entrypoint: ./entrypoint.sh
-    command: >
-      bash -c wsproxy -a serve:6900,serve:6121,serve:5121 &
+    # TESTAR UM HEXED
+    # command: >
+    #   bash -c ./configure && make clean && make sql
     ports:
-      - "5999:5999"
+      - "5121:5121"
+      - "6121:6121"
+      - "6900:6900"
     environment:
       - CHOKIDAR_USEPOLLING=true
       - REDIRECT_STATUS=true
@@ -28,15 +31,15 @@ services:
       
   db:
     build: db
-    container_name: db-ragnarok
+    container_name: ro-ragnarok-db
     restart: always
     tty: true
-    # ports:
-    #   - "33006:3306"
+    ports:
+      - "3306:3306"
     volumes:
       - ./db/dbdata:/var/lib/mysql
       - ./db/sql-files:/docker-entrypoint-initdb.d
-      - ./db/log:/var/log/mysql
+      # - ./db/log:/var/log/mysql
     environment:
       - MYSQL_DATABASE=ragnarok
       - MYSQL_ROOT_PASSWORD=R00t+
@@ -48,7 +51,7 @@ services:
   # RoBrawser
   app:
     build: app
-    container_name: ro-browser-app
+    container_name: ro-browser-Brawser
     volumes:
       - ./app:/var/www
     networks:
@@ -67,7 +70,42 @@ services:
       - ragnarok-app-network
     depends_on:
       - app
-                    
+
+  wsproxy:
+    # image: node:18
+    build: wsproxy
+    container_name: ro-browser-wsproxy
+    restart: always
+    tty: true
+    # command: >
+    #   bash -c wsproxy -a 127.0.0.1:6900,127.0.0.1:6121,127.0.0.1:5121
+    command: >
+      bash -c wsproxy -a serve:6900,serve:6121,serve:5121
+    ports:
+      - "5999:5999"
+    networks:
+      - ragnarok-app-network
+    depends_on:
+      - serve
+      - app
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      # 8080 is the host port and 80 is the docker port
+      - 9000:80
+    environment:
+      - PMA_ARBITRARY:1
+      - PMA_HOST:db
+      - MYSQL_USERNAME:ragnarok
+      - MYSQL_ROOT_PASSWORD:ragnarok
+    depends_on: 
+      - db
+    networks:
+      - ragnarok-app-network
+                        
 networks:
   ragnarok-app-network:
     driver: bridge

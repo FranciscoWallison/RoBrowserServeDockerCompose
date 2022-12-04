@@ -1,4 +1,12 @@
 ## Config RoBrawser
+#### Usando o ````patch```` para mudar os arquivos de forma rápida.
+
+Com o git instalado na sua maquina jogue o arquivo ````0201-config-client.patch```` dentro do diretório ````./roBrowser```` e execute:
+
+````
+git apply 0201-config-client.patch
+````
+
 #### Mudar os arquivos
 ````
     app/roBrowser/client/Client.php

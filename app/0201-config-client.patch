@@ -1,13 +1,3 @@
-From ac8057ab7c9b4a9f25b4d5090866ab71dba371f0 Mon Sep 17 00:00:00 2001
-From: Francisco Wallison <franciscowallison@gmail.com>
-Date: Sat, 2 Apr 2022 12:02:30 -0300
-Subject: [PATCH 201/201] config client
-
----
- client/Client.php |  2 +-
- client/index.php  | 10 +++++-----
- 2 files changed, 6 insertions(+), 6 deletions(-)
-
 diff --git a/client/Client.php b/client/Client.php
 index c57fdd1..1f1dad7 100644
 --- a/client/Client.php
@@ -49,6 +39,16 @@ index c618d2b..b60979d 100644
  
  	// Get file
  	$path = preg_replace('/(.*('. $directory . '\/)?)(data|BGM\/.*)/', '$3', $path );
--- 
-2.29.2.windows.3
-
+diff --git a/src/Network/NetworkManager.js b/src/Network/NetworkManager.js
+index ada1526..a63bc02 100644
+--- a/src/Network/NetworkManager.js
++++ b/src/Network/NetworkManager.js
+@@ -429,7 +429,7 @@ define(function( require )
+ 		var uint32 = new Uint32Array(buf);
+ 		uint32[0]  = long;
+ 
+-		return Array.prototype.join.call( uint8, '.' );
++		return Configs.get('addressStatus') ? Configs.get('address') : Array.prototype.join.call( uint8, '.' );
+ 	}
+ 
+ 
