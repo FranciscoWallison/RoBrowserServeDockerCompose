@@ -182,7 +182,9 @@ docker compose -f "docker-compose.yaml" down
 
 Obs:
 ````
-	Quando terminar de rodar os comandos é só abrir o navegador http://localhost:8080/
+	1 - Quando terminar de rodar os comandos é só abrir o navegador http://localhost:8080/
+	2 - Os navegadores modernos impõem políticas de segurança mais rígidas, e conexões WebSocket devem ser feitas por meio de URLs seguras (WSS) quando a página principal é carregada por HTTPS. Utilize o ROBrowser no mesmo servidor do emulador para facilitar a comunicação.
+	3  - Teste a sua conexão com o websocat. Tente instalar utilizando cargo install websocat e executando o comando como exemplo: "websocat ws://websocket.example.com:5999/127.0.0.1:690"	
 ````
 
 # Comandos uteis
