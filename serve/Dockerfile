@@ -1,4 +1,8 @@
 FROM centos:7
+
+COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
+
 RUN yum -y update && yum clean all && \
     yum install -y bash-completion  \
     gcc g++ make mysql mysql-devel mysql-server pcre-devel zlib-devel git
