@@ -90,7 +90,7 @@ services:
       - app
 
   phpmyadmin:
-    image: phpmyadmin
+    image: phpmyadmin:5.2
     container_name: phpmyadmin
     restart: always
     ports:

@@ -7,6 +7,19 @@ EXP:
 ````
   ./serve/rathena
 ````
+
+### Submodule
+This project uses git submodules to manage the rAthena emulator. To clone the project and initialize the submodule, use the following command (replace the URL with the actual repository URL):
+
+```
+git clone --recursive <repository-url>
+```
+
+If you have already cloned the repository, you can initialize the submodule with:
+```
+git submodule update --init --recursive
+```
+
 #### 2 º - Referencia do seu amulador.
 EXP: 
 ````

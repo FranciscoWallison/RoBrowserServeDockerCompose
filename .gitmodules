@@ -1,0 +1,3 @@
+[submodule "serve/emulador"]
+	path = serve/emulador
+	url = https://github.com/rathena/rathena.git
